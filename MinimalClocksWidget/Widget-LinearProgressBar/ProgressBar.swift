@@ -6,22 +6,18 @@
 //
 
 import SwiftUI
-struct ProgressBar: View {
+struct ProgressBar: View, DayProgressViewProtocol {
     /*let startOfDay = Calendar.current.startOfDay(for: Date())*/
     var date: Date
-    private var percentOfDayCompleted: Double {
-        let calendar = Calendar.current
-        let startOfDay = calendar.startOfDay(for: date)
-        let secondsSinceMidnight = date.timeIntervalSince(startOfDay)
-        let totalSecondsInDay = 24 * 60 * 60
-        return (secondsSinceMidnight / Double(totalSecondsInDay)) * 100
-    }
+    var progressType: ProgressType
+    
     var body: some View {
-        
+        let percentOfDayCompleted = progressType == .completed ? Util.calculateDayCompletionPercentages(for: date).completed :
+        Util.calculateDayCompletionPercentages(for: date).remaining
         VStack(spacing: 0) {
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Day Progress")
+                    Text(progressType == .completed ? "Day Progress" : "Day Remaining")
                         .font(.custom("Outfit", size: 12))
                         .foregroundStyle(Color.indigoPrimary)
                         .offset(y: 12)
@@ -40,7 +36,7 @@ struct ProgressBar: View {
                     .background(RoundedRectangle(cornerRadius: 24).fill(Color.OrangeSecondary))
                  */
             }
-            ProgressBarView(completedPercentage: percentOfDayCompleted)
+            ProgressBarView(completedPercentage: Double(percentOfDayCompleted))
                 .offset(y: -6)
         }
         .padding(.horizontal, 6)
@@ -71,6 +67,10 @@ struct ProgressBarView: View {
 
 
 #Preview {
-    ProgressBar(date: Date())
-        .frame(width: 292, height: 141)
+    Group {
+        ProgressBar(date: Date(), progressType: .completed)
+            .frame(width: 292, height: 141)
+        ProgressBar(date: Date(), progressType: .remaining)
+            .frame(width: 292, height: 141)
+    }
 }

@@ -9,47 +9,40 @@ import SwiftUI
 import WidgetKit
 
 struct ProgressBarWidgetProvider: TimelineProvider {
+    
     func placeholder(in context: Context) -> ProgressBarWidgetEntry {
-        ProgressBarWidgetEntry(date: Date())
+        ProgressBarWidgetEntry(date: Date(), progressType: .completed)
     }
 
     func getSnapshot(in context: Context, completion: @escaping (ProgressBarWidgetEntry) -> ()) {
-        let entry = ProgressBarWidgetEntry(date: Date())
+        let entry = ProgressBarWidgetEntry(date: Date(), progressType: .completed)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [ProgressBarWidgetEntry] = []
-
-        let fourteenMinutes: TimeInterval = 60 * 14 // 14 minutes in seconds
-        let currentDate = Date()
-        var nextDate = currentDate
-
-        // Create 8 entries, each 14 minutes apart
-        for _ in 1...8 {
-            entries.append(ProgressBarWidgetEntry(date: nextDate))
-            nextDate += fourteenMinutes
+        func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
+            let timeline: Timeline<ProgressBarWidgetEntry> = Util.createDayPercetageCompletionTimeline(currentDate: Date()) { date in
+                ProgressBarWidgetEntry(date: date, progressType: .completed)
+            }
+            completion(timeline)
         }
-
-        // Create the timeline with entries and specify the policy
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
-struct ProgressBarWidgetEntry: TimelineEntry {
+struct ProgressBarWidgetEntry: TimelineEntry, DayProgressViewProtocol {
     let date: Date
+    let progressType: ProgressType
 }
 
 struct ProgressBarWidgetEntryView : View {
     var entry: ProgressBarWidgetProvider.Entry
     var body: some View {
-        ProgressBar(date: entry.date)
+        ProgressBar(date: entry.date, progressType: entry.progressType)
     }
 }
 
-
 struct ProgressBarWidget: Widget {
+    
     let kind: String = "ProgressBarWidget"
 
     var body: some WidgetConfiguration {
@@ -70,11 +63,19 @@ struct ProgressBarWidget: Widget {
 }
 
 #Preview(as: .systemMedium) {
-    ProgressBarWidget()
+        ProgressBarWidget()
 } timeline: {
-    ProgressBarWidgetEntry(date: Date() - 3600)
-    ProgressBarWidgetEntry(date: Date())
-    ProgressBarWidgetEntry(date: Date() + 3600)
+    ProgressBarWidgetEntry(date: Date() - 3600, progressType: .completed)
+    ProgressBarWidgetEntry(date: Date(), progressType: .completed)
+    ProgressBarWidgetEntry(date: Date() + 3600, progressType: .completed)
+}
+
+#Preview(as: .systemMedium) {
+        ProgressBarWidget()
+} timeline: {
+    ProgressBarWidgetEntry(date: Date() - 3600, progressType: .remaining)
+    ProgressBarWidgetEntry(date: Date(), progressType: .remaining)
+    ProgressBarWidgetEntry(date: Date() + 3600, progressType: .remaining)
 }
 
 /*

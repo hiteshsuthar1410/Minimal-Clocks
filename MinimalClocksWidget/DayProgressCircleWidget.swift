@@ -19,20 +19,9 @@ struct DayProgressCircleWidgetProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [DayProgressCircleWidgetEntry] = []
-
-        let fourteenMinutes: TimeInterval = 60 * 14 // 14 minutes in seconds
-        let currentDate = Date()
-        var nextDate = currentDate
-
-        // Create 8 entries, each 14 minutes apart
-        for _ in 1...8 {
-            entries.append(DayProgressCircleWidgetEntry(date: nextDate))
-            nextDate += fourteenMinutes
+        let timeline: Timeline<DayProgressCircleWidgetEntry> = Util.createDayPercetageCompletionTimeline(currentDate: Date()) { date in
+            DayProgressCircleWidgetEntry(date: date)
         }
-
-        // Create the timeline with entries and specify the policy
-        let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
 }
@@ -44,7 +33,7 @@ struct DayProgressCircleWidgetEntry: TimelineEntry {
 struct DayProgressCircleWidgetEntryView : View {
     var entry: DayProgressCircleWidgetProvider.Entry
     var body: some View {
-        DayProgressCircleView(date: entry.date)
+        DayProgressCircleView(date: entry.date, progressType: .completed)
     }
 }
 

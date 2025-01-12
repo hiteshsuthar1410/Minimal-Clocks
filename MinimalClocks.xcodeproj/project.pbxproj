@@ -11,6 +11,8 @@
 		6E0E6EA42D32E6A500321129 /* DayProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */; };
 		6E0E6EA52D32E70800321129 /* DayProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */; };
 		6E0E6EA62D32E70A00321129 /* DayProgressCircleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EA12D32E5BF00321129 /* DayProgressCircleWidget.swift */; };
+		6E0E6EB02D33A1A200321129 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EAF2D33A1A200321129 /* Util.swift */; };
+		6E0E6EB12D33A1A200321129 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EAF2D33A1A200321129 /* Util.swift */; };
 		6E84D6B42D31A78F00EE28CB /* MinimalClocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84D6B32D31A78F00EE28CB /* MinimalClocksApp.swift */; };
 		6E84D6B62D31A78F00EE28CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84D6B52D31A78F00EE28CB /* ContentView.swift */; };
 		6E84D6B82D31A79200EE28CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E84D6B72D31A79200EE28CB /* Assets.xcassets */; };
@@ -35,13 +37,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6E0E6EAB2D32FFED00321129 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E84D6A82D31A78F00EE28CB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D70EFAB0F7D5F9FDA738ACF9;
-			remoteInfo = "Build Target";
-		};
 		6E84D6EC2D31A86800EE28CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E84D6A82D31A78F00EE28CB /* Project object */;
@@ -68,6 +63,7 @@
 /* Begin PBXFileReference section */
 		6E0E6EA12D32E5BF00321129 /* DayProgressCircleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressCircleWidget.swift; sourceTree = "<group>"; };
 		6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressCircleView.swift; sourceTree = "<group>"; };
+		6E0E6EAF2D33A1A200321129 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6E84D6B02D31A78F00EE28CB /* MinimalClocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalClocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84D6B32D31A78F00EE28CB /* MinimalClocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalClocksApp.swift; sourceTree = "<group>"; };
 		6E84D6B52D31A78F00EE28CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -186,6 +182,7 @@
 				6E84D6E92D31A86800EE28CB /* Assets.xcassets */,
 				6E0E6EA12D32E5BF00321129 /* DayProgressCircleWidget.swift */,
 				6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */,
+				6E0E6EAF2D33A1A200321129 /* Util.swift */,
 			);
 			path = MinimalClocksWidget;
 			sourceTree = "<group>";
@@ -224,22 +221,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		D70EFAB0F7D5F9FDA738ACF9 /* Build Target */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "-c \"${TARGET_DEVICE_FAMILY}\"";
-			buildConfigurationList = 6E0E6EAE2D33001500321129 /* Build configuration list */;
-			buildPhases = (
-			);
-			buildToolPath = /bin/sh;
-			dependencies = (
-			);
-			name = "Build Target";
-			passBuildSettingsInEnvironment = 1;
-			productName = "Build Target";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		6E84D6AF2D31A78F00EE28CB /* MinimalClocks */ = {
 			isa = PBXNativeTarget;
@@ -253,7 +234,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FB9B5FD8C193365BE038ACF9 /* PBXTargetDependency */,
 				6E84D6ED2D31A86800EE28CB /* PBXTargetDependency */,
 			);
 			name = MinimalClocks;
@@ -309,7 +289,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D70EFAB0F7D5F9FDA738ACF9 /* Build Target */,
 				6E84D6AF2D31A78F00EE28CB /* MinimalClocks */,
 				6E84D6DD2D31A86500EE28CB /* MinimalClocksWidgetExtension */,
 			);
@@ -345,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E84D6F32D31A89E00EE28CB /* DateView.swift in Sources */,
+				6E0E6EB02D33A1A200321129 /* Util.swift in Sources */,
 				6E84D6B62D31A78F00EE28CB /* ContentView.swift in Sources */,
 				6E84D6F62D31BA5F00EE28CB /* TypographySystem.swift in Sources */,
 				6EEA728B2D329A6B00A97FF8 /* ProgressBarWidget.swift in Sources */,
@@ -360,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E84D6F42D31AEC900EE28CB /* DateView.swift in Sources */,
+				6E0E6EB12D33A1A200321129 /* Util.swift in Sources */,
 				6EEA72822D324FE100A97FF8 /* TypographySystem.swift in Sources */,
 				6E84D6E82D31A86500EE28CB /* MinimalClocksWidget.swift in Sources */,
 				6EEA728C2D329A6B00A97FF8 /* ProgressBarWidget.swift in Sources */,
@@ -378,33 +359,9 @@
 			target = 6E84D6DD2D31A86500EE28CB /* MinimalClocksWidgetExtension */;
 			targetProxy = 6E84D6EC2D31A86800EE28CB /* PBXContainerItemProxy */;
 		};
-		FB9B5FD8C193365BE038ACF9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D70EFAB0F7D5F9FDA738ACF9 /* Build Target */;
-			targetProxy = 6E0E6EAB2D32FFED00321129 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		6E0E6EAC2D33001500321129 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				PRODUCT_NAME = "Build Target";
-			};
-			name = Debug;
-		};
-		6E0E6EAD2D33001500321129 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				PRODUCT_NAME = "Build Target";
-			};
-			name = Release;
-		};
 		6E84D6BC2D31A79200EE28CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -645,15 +602,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E0E6EAE2D33001500321129 /* Build configuration list */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E0E6EAC2D33001500321129 /* Debug */,
-				6E0E6EAD2D33001500321129 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		6E84D6AB2D31A78F00EE28CB /* Build configuration list for PBXProject "MinimalClocks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

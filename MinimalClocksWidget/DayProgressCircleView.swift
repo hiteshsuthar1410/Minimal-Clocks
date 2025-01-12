@@ -6,17 +6,14 @@
 //
 
 import SwiftUI
-struct DayProgressCircleView: View {
-    /*let startOfDay = Calendar.current.startOfDay(for: Date())*/
-    var date: Date
-    private var percentOfDayCompleted: Double {
-        let calendar = Calendar.current
-        let startOfDay = calendar.startOfDay(for: date)
-        let secondsSinceMidnight = date.timeIntervalSince(startOfDay)
-        let totalSecondsInDay = 24 * 60 * 60
-        return (secondsSinceMidnight / Double(totalSecondsInDay)) * 100
-    }
+struct DayProgressCircleView: View, DayProgressViewProtocol {
+    let date: Date
+    let progressType: ProgressType
+    
     var body: some View {
+        let percentOfDayCompleted = progressType == .completed ? Util.calculateDayCompletionPercentages(for: date).completed :
+        Util.calculateDayCompletionPercentages(for: date).remaining
+        
         VStack(spacing: 6) {
             ZStack {
                 DayProgressCircle(completedPercentage: percentOfDayCompleted)
@@ -30,11 +27,10 @@ struct DayProgressCircleView: View {
                         .foregroundStyle(Color.indigoPrimary)
                 }
             }
-            Text("Day Progress")
+            Text(progressType == .completed ? "Day Progress" : "Day Remaining")
                 .font(.custom("Outfit", size: 12))
                 .foregroundStyle(Color.indigoPrimary)
                 .frame(maxWidth: .infinity)
-            
         }
         .offset(y: 3)
         .frame(width: 141, height: 141, alignment: .center)
@@ -42,7 +38,7 @@ struct DayProgressCircleView: View {
 }
 
 struct DayProgressCircle: View {
-    let completedPercentage: Double // Percentage of the day completed
+    let completedPercentage: Int // Percentage of the day completed
     
     var body: some View {
         ZStack{
@@ -52,7 +48,7 @@ struct DayProgressCircle: View {
                 .rotationEffect(Angle(degrees: 270.0))
             
             Circle()
-                .trim(from: 0.0, to: completedPercentage/100)
+                .trim(from: 0.0, to: (CGFloat(completedPercentage)/100))
                 .stroke(style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
                 .foregroundStyle(Color.orangePrimary)
                 .rotationEffect(Angle(degrees: 270.0))
@@ -62,6 +58,21 @@ struct DayProgressCircle: View {
 
 
 #Preview {
-    DayProgressCircleView(date: Date())
-        .frame(width: 141, height: 141)
+    Group {
+        DayProgressCircleView(date: Date(), progressType: .completed)
+            .frame(width: 141, height: 141)
+        
+        DayProgressCircleView(date: Date(), progressType: .remaining)
+            .frame(width: 141, height: 141)
+    }
+}
+
+
+protocol DayProgressViewProtocol {
+    var date: Date { get }
+    var progressType: ProgressType { get }
+}
+
+enum ProgressType {
+    case remaining, completed
 }
