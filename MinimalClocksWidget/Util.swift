@@ -13,7 +13,7 @@ struct Util {
     static func createDayPercetageCompletionTimeline<T: TimelineEntry>(currentDate: Date,numberOfEntries: Int = 8, entryBuilder: (Date) -> T) -> Timeline<T> {
         var entries: [T] = []
         let blockDuration: TimeInterval = 864 // Each block is 864 seconds
-        let totalSecondsInDay: TimeInterval = 86400 // Total seconds in a day
+        let _: TimeInterval = 86400 // Total seconds in a day
         
         // Calculate the remainder time left in the current block
         let secondsSinceMidnight = Calendar.current.dateComponents([.second], from: Calendar.current.startOfDay(for: currentDate), to: currentDate).second ?? 0
