@@ -7,6 +7,9 @@
 
 import WidgetKit
 struct Util {
+    
+    private init() {}
+    
     static func createDayPercetageCompletionTimeline<T: TimelineEntry>(currentDate: Date,numberOfEntries: Int = 8, entryBuilder: (Date) -> T) -> Timeline<T> {
         var entries: [T] = []
         let blockDuration: TimeInterval = 864 // Each block is 864 seconds
@@ -46,5 +49,17 @@ struct Util {
         let remainingPercentage = 100 - Int(completedPercentage)
         
         return (completed: Int(completedPercentage), remaining: remainingPercentage)
+    }
+    
+    static func progreessType(for config: ProgressTypeSelectionIntent) -> ProgressType {
+        switch config.Progress {
+        case .elapsed:
+                return .completed
+        case .remaining:
+            return  .remaining
+            
+        default:
+            return .completed
+        }
     }
 }

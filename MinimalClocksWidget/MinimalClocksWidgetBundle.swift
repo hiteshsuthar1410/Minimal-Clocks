@@ -13,6 +13,6 @@ struct MinimalClocksWidgetBundle: WidgetBundle {
     var body: some Widget {
         MinimalClocksWidget()
         DayProgressCircleWidget()
-        ProgressBarWidget()
+        DayProgressBarWidget()
     }
 }

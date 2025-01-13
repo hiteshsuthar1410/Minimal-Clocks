@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct ProgressBar: View, DayProgressViewProtocol {
+struct DayProgressBarView: View, DayProgressViewProtocol {
     /*let startOfDay = Calendar.current.startOfDay(for: Date())*/
     var date: Date
     var progressType: ProgressType
@@ -36,14 +36,14 @@ struct ProgressBar: View, DayProgressViewProtocol {
                     .background(RoundedRectangle(cornerRadius: 24).fill(Color.OrangeSecondary))
                  */
             }
-            ProgressBarView(completedPercentage: Double(percentOfDayCompleted))
+            DayProgressBar(completedPercentage: Double(percentOfDayCompleted))
                 .offset(y: -6)
         }
         .padding(.horizontal, 6)
     }
 }
 
-struct ProgressBarView: View {
+struct DayProgressBar: View {
     let completedPercentage: Double // Percentage of the day completed
     
     var body: some View {
@@ -68,9 +68,9 @@ struct ProgressBarView: View {
 
 #Preview {
     Group {
-        ProgressBar(date: Date(), progressType: .completed)
+        DayProgressBarView(date: Date(), progressType: .completed)
             .frame(width: 292, height: 141)
-        ProgressBar(date: Date(), progressType: .remaining)
+        DayProgressBarView(date: Date(), progressType: .remaining)
             .frame(width: 292, height: 141)
     }
 }
