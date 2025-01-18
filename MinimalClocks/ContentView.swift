@@ -161,7 +161,7 @@ struct ContentView: View {
         }
     }
 }
-
+@available(iOS 17.0, *)
 #Preview {
     ContentView()
 }

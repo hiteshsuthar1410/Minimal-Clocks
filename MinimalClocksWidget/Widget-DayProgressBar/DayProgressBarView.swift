@@ -65,7 +65,7 @@ struct DayProgressBar: View {
     }
 }
 
-
+@available(iOS 17.0, *)
 #Preview {
     Group {
         DayProgressBarView(date: Date(), progressType: .completed)

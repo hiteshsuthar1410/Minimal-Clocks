@@ -32,8 +32,6 @@ struct DayProgressBarWidgetProvider: IntentTimelineProvider {
     }
 }
 
-
-
 struct DayProgressBarWidgetEntryView : View {
     var entry: DayProgressBarWidgetProvider.Entry
     var body: some View {
@@ -62,6 +60,7 @@ struct DayProgressBarWidget: Widget {
     }
 }
 
+@available(iOS 17.0, *)
 #Preview(as: .systemMedium) {
         DayProgressBarWidget()
 } timeline: {

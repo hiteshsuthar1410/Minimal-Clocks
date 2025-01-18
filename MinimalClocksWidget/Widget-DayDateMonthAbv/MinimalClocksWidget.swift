@@ -65,6 +65,7 @@ struct MinimalClocksWidget: Widget {
     }
 }
 
+@available(iOS 17.0, *)
 #Preview(as: .systemSmall) {
     MinimalClocksWidget()
 } timeline: {

@@ -18,6 +18,13 @@
 		6E0E6EB12D33A1A200321129 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EAF2D33A1A200321129 /* Util.swift */; };
 		6E0E6EB32D33B6D600321129 /* ProgressTypeSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EB22D33B6D600321129 /* ProgressTypeSelection.intentdefinition */; };
 		6E0E6EB42D33B6D600321129 /* ProgressTypeSelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E6EB22D33B6D600321129 /* ProgressTypeSelection.intentdefinition */; };
+		6E20A61D2D397D560007A16D /* ExperimentGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20A61C2D397D560007A16D /* ExperimentGradients.swift */; };
+		6E20A61E2D39819B0007A16D /* ExperimentGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E20A61C2D397D560007A16D /* ExperimentGradients.swift */; };
+		6E6CBE0B2D3B782400C8521C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E6CBE0A2D3B782400C8521C /* GoogleService-Info.plist */; };
+		6E6CBE0C2D3B782400C8521C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E6CBE0A2D3B782400C8521C /* GoogleService-Info.plist */; };
+		6E6CBE0F2D3B78D500C8521C /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6CBE0E2D3B78D500C8521C /* FirebaseFirestore */; };
+		6E6CBE112D3B78D500C8521C /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6CBE102D3B78D500C8521C /* FirebaseFirestoreCombine-Community */; };
+		6E6CBE132D3B79A400C8521C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 6E6CBE122D3B79A400C8521C /* FirebaseAnalytics */; };
 		6E84D6B42D31A78F00EE28CB /* MinimalClocksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84D6B32D31A78F00EE28CB /* MinimalClocksApp.swift */; };
 		6E84D6B62D31A78F00EE28CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84D6B52D31A78F00EE28CB /* ContentView.swift */; };
 		6E84D6B82D31A79200EE28CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E84D6B72D31A79200EE28CB /* Assets.xcassets */; };
@@ -87,6 +94,8 @@
 		6E0E6EA32D32E6A500321129 /* DayProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayProgressCircleView.swift; sourceTree = "<group>"; };
 		6E0E6EAF2D33A1A200321129 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		6E0E6EB22D33B6D600321129 /* ProgressTypeSelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ProgressTypeSelection.intentdefinition; sourceTree = "<group>"; };
+		6E20A61C2D397D560007A16D /* ExperimentGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperimentGradients.swift; sourceTree = "<group>"; };
+		6E6CBE0A2D3B782400C8521C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E84D6B02D31A78F00EE28CB /* MinimalClocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalClocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E84D6B32D31A78F00EE28CB /* MinimalClocksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalClocksApp.swift; sourceTree = "<group>"; };
 		6E84D6B52D31A78F00EE28CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +122,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6CBE0F2D3B78D500C8521C /* FirebaseFirestore in Frameworks */,
+				6E6CBE112D3B78D500C8521C /* FirebaseFirestoreCombine-Community in Frameworks */,
+				6E6CBE132D3B79A400C8521C /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,12 +192,14 @@
 			isa = PBXGroup;
 			children = (
 				6E84D7192D31BF2200EE28CB /* Info.plist */,
+				6E6CBE0A2D3B782400C8521C /* GoogleService-Info.plist */,
 				6E84D6B32D31A78F00EE28CB /* MinimalClocksApp.swift */,
 				6E84D6B52D31A78F00EE28CB /* ContentView.swift */,
 				6E84D7142D31BBBA00EE28CB /* Resources */,
 				6E84D6B72D31A79200EE28CB /* Assets.xcassets */,
 				6E84D6B92D31A79200EE28CB /* Preview Content */,
 				6E84D7152D31BC9C00EE28CB /* Helpers */,
+				6E20A61C2D397D560007A16D /* ExperimentGradients.swift */,
 			);
 			path = MinimalClocks;
 			sourceTree = "<group>";
@@ -273,6 +287,11 @@
 				6E84D6ED2D31A86800EE28CB /* PBXTargetDependency */,
 			);
 			name = MinimalClocks;
+			packageProductDependencies = (
+				6E6CBE0E2D3B78D500C8521C /* FirebaseFirestore */,
+				6E6CBE102D3B78D500C8521C /* FirebaseFirestoreCombine-Community */,
+				6E6CBE122D3B79A400C8521C /* FirebaseAnalytics */,
+			);
 			productName = MinimalClocks;
 			productReference = 6E84D6B02D31A78F00EE28CB /* MinimalClocks.app */;
 			productType = "com.apple.product-type.application";
@@ -321,6 +340,9 @@
 				Base,
 			);
 			mainGroup = 6E84D6A72D31A78F00EE28CB;
+			packageReferences = (
+				6E6CBE0D2D3B78D500C8521C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 6E84D6B12D31A78F00EE28CB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -338,6 +360,7 @@
 			files = (
 				20D0634C30D06DCA0938ACF9 /* README.md in Resources */,
 				6E84D6BB2D31A79200EE28CB /* Preview Assets.xcassets in Resources */,
+				6E6CBE0B2D3B782400C8521C /* GoogleService-Info.plist in Resources */,
 				6E84D7172D31BF0600EE28CB /* Outfit.ttf in Resources */,
 				6E84D6B82D31A79200EE28CB /* Assets.xcassets in Resources */,
 			);
@@ -348,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E84D6EA2D31A86800EE28CB /* Assets.xcassets in Resources */,
+				6E6CBE0C2D3B782400C8521C /* GoogleService-Info.plist in Resources */,
 				6EEA72862D32959700A97FF8 /* Assets.xcassets in Resources */,
 				6E84D7182D31BF0600EE28CB /* Outfit.ttf in Resources */,
 			);
@@ -362,6 +386,7 @@
 			files = (
 				6E84D6F32D31A89E00EE28CB /* DateView.swift in Sources */,
 				6E0E6EB02D33A1A200321129 /* Util.swift in Sources */,
+				6E20A61D2D397D560007A16D /* ExperimentGradients.swift in Sources */,
 				6E84D6B62D31A78F00EE28CB /* ContentView.swift in Sources */,
 				6E84D6F62D31BA5F00EE28CB /* TypographySystem.swift in Sources */,
 				6E0E6EB32D33B6D600321129 /* ProgressTypeSelection.intentdefinition in Sources */,
@@ -380,6 +405,7 @@
 			files = (
 				6E84D6F42D31AEC900EE28CB /* DateView.swift in Sources */,
 				6E0E6EB12D33A1A200321129 /* Util.swift in Sources */,
+				6E20A61E2D39819B0007A16D /* ExperimentGradients.swift in Sources */,
 				6EEA72822D324FE100A97FF8 /* TypographySystem.swift in Sources */,
 				6E84D6E82D31A86500EE28CB /* MinimalClocksWidget.swift in Sources */,
 				6E0E6EB42D33B6D600321129 /* ProgressTypeSelection.intentdefinition in Sources */,
@@ -542,6 +568,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -573,6 +600,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -598,6 +626,7 @@
 				INFOPLIST_FILE = MinimalClocksWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MinimalClocksWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +654,7 @@
 				INFOPLIST_FILE = MinimalClocksWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MinimalClocksWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,6 +701,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E6CBE0D2D3B78D500C8521C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E6CBE0E2D3B78D500C8521C /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E6CBE0D2D3B78D500C8521C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6E6CBE102D3B78D500C8521C /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E6CBE0D2D3B78D500C8521C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		6E6CBE122D3B79A400C8521C /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E6CBE0D2D3B78D500C8521C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E84D6A82D31A78F00EE28CB /* Project object */;
 }

@@ -62,6 +62,7 @@ struct DayProgressCircleWidget: Widget {
     }
 }
 
+@available(iOS 17.0, *)
 #Preview(as: .systemSmall) {
     DayProgressCircleWidget()
 } timeline: {

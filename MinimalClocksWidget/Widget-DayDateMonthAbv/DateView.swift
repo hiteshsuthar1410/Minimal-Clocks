@@ -52,7 +52,7 @@ struct DateView: View {
     }
 }
 
-
+@available(iOS 17.0, *)
 #Preview {
     DateView()
 }
